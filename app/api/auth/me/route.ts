@@ -1,0 +1,2 @@
+import {NextRequest,NextResponse} from "next/server";
+export async function GET(req:NextRequest){const g=globalThis as typeof globalThis & {__vedaUsers?:Map<string,any>;__vedaSessions?:Map<string,string>};const id=g.__vedaSessions?.get(req.cookies.get("veda_session")?.value||"");const u=[...(g.__vedaUsers?.values()||[])].find(x=>x.id===id);return NextResponse.json({user:u?{id:u.id,name:u.name,email:u.email}:null});}
